@@ -1,18 +1,33 @@
+
 <!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ゆれあ 公式のサイト | ゆれあ （Yurea）</title>
-    <!-- CSSファイルを読み込むための記述（同じフォルダにある場合） -->
+
+    <title>ゆれあ 公式サイト | ゆれあ (Yurea)</title>
+
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Splide CSS -->
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css"
+    >
 </head>
+
 <body>
 
-    <!----> 上部バー（ヘッダー） -->
+    <!-- 上部バー（ヘッダー） -->
     <header class="top-bar">
+
         <div>
-            <img src="https://raw.githubusercontent.com/ringra1221/yurea-official/refs/heads/main/page/asset/yurea-logo.png" class="yurea-logo">
+            <img
+                src="https://raw.githubusercontent.com/ringra1221/yurea-official/refs/heads/main/page/asset/yurea-logo.png"
+                class="yurea-logo"
+                alt="ゆれあ ロゴ"
+            >
         </div>
 
         <nav>
@@ -20,15 +35,88 @@
             <a class="nav-links" href="#">作品</a>
             <a class="nav-links" href="#">お問い合わせ</a>
         </nav>
-        
 
     </header>
 
+
     <!-- メインコンテンツ -->
     <main class="content">
-        <h1>メインコンテンツ</h1>
-        <p>画面を下にスクロールしても、上のバーは常に一番上に固定されて表示されます。</p>
+
+        <!-- メインビジュアルスライダー -->
+        <section id="main-slider" class="splide" aria-label="ゆれあメインビジュアル">
+
+            <div class="splide__track">
+
+                <ul class="splide__list">
+
+                    <!-- スライド1 -->
+                    <li class="splide__slide">
+                        <img src="images/main01.jpg" alt="ゆれあ メインビジュアル1">
+                    </li>
+
+                    <!-- スライド2 -->
+                    <li class="splide__slide">
+                        <img src="images/main02.jpg" alt="ゆれあ メインビジュアル2">
+                    </li>
+
+                    <!-- スライド3 -->
+                    <li class="splide__slide">
+                        <img src="images/main03.jpg" alt="ゆれあ メインビジュアル3">
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+        <!-- 通常コンテンツ -->
+        <section class="main-content">
+
+            <h1>メインコンテンツ</h1>
+
+            <p>
+                画面を下にスクロールしても、
+                上のバーは常に一番上に固定されて表示されます。
+            </p>
+
+        </section>
+
     </main>
+
+
+    <!-- Splide JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+
+    <!-- スライダーの初期化 -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+            new Splide("#main-slider", {
+                type: "loop",
+                autoplay: true,
+                interval: 5000,
+                speed: 1000,
+
+                pauseOnHover: true,
+                pauseOnFocus: true,
+
+                arrows: true,
+                pagination: true,
+
+                perPage: 1,
+                perMove: 1,
+
+                drag: true,
+
+                rewind: false,
+
+                lazyLoad: "nearby"
+            }).mount();
+
+        });
+    </script>
 
 </body>
 </html>
