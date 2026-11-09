@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        const response = await fetch("/page/common/header.html");
+        const response = await fetch("https://raw.githubusercontent.com/ringra1221/yurea-official/refs/heads/main/common/header.html");
 
         if (!response.ok) {
             throw new Error(
