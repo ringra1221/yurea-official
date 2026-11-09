@@ -227,6 +227,18 @@ body {
     color: #02304f;
 }
 
+.contact-form {
+    width: 100%;
+    max-width: 680px;
+    margin: 30px auto;
+}
+
+.contact-form iframe {
+    display: block;
+    width: 100%;
+    border: 0;
+}
+
 
 /* ========================================
    10. スマートフォン対応
