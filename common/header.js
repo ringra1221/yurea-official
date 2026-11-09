@@ -1,7 +1,6 @@
-console.log("header.js loaded");
+const headerUrl = new URL("header.html", document.currentScript.src);
 
 document.addEventListener("DOMContentLoaded", async () => {
-
     const headerContainer = document.getElementById("site-header");
 
     if (!headerContainer) {
@@ -9,10 +8,8 @@ document.addEventListener("DOMContentLoaded", async () => {
     }
 
     try {
-        const response = await fetch("https://raw.githubusercontent.com/ringra1221/yurea-official/refs/heads/main/common/header.html");
-        
-        console.log(headerHTML);
-        
+        const response = await fetch(headerUrl);
+
         if (!response.ok) {
             throw new Error(
                 `Header loading failed: ${response.status}`
@@ -20,13 +17,8 @@ document.addEventListener("DOMContentLoaded", async () => {
         }
 
         const headerHTML = await response.text();
-
         headerContainer.innerHTML = headerHTML;
-
-        console.log(headerContainer);
-
     } catch (error) {
         console.error("ヘッダー読み込みエラー:", error);
     }
-
 });
