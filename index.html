@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>ゆれあ 公式サイト | ゆれあ (Yurea)</title>
+    <meta name="description" content="美少女ゲームブランド ゆれあ（Yurea）の公式サイトです。">
 
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -13,37 +14,51 @@
     <!-- Splide CSS -->
     <link
         rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css"
+        href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css"
     >
+
+    <!-- Splide JS -->
+    <script
+        src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"
+        defer
+    ></script>
+
+    <!-- 自作JavaScript -->
+    <script src="script.js" defer></script>
 </head>
 
 <body>
 
-    <!-- 上部バー（ヘッダー） -->
+    <!-- ヘッダー -->
     <header class="top-bar">
 
-        <div>
-            <img
-                src="https://raw.githubusercontent.com/ringra1221/yurea-official/refs/heads/main/page/asset/yurea-logo.png"
-                class="yurea-logo"
-                alt="ゆれあ ロゴ"
-            >
+        <div class="logo-container">
+            <a href="#">
+                <img
+                    src="images/yurea-logo.png"
+                    class="yurea-logo"
+                    alt="ゆれあ ロゴ"
+                >
+            </a>
         </div>
 
-        <nav>
+        <nav class="navigation" aria-label="メインナビゲーション">
             <a class="nav-links" href="#">トップ</a>
-            <a class="nav-links" href="#">作品</a>
-            <a class="nav-links" href="#">お問い合わせ</a>
+            <a class="nav-links" href="#works">作品</a>
+            <a class="nav-links" href="#contact">お問い合わせ</a>
         </nav>
 
     </header>
-
 
     <!-- メインコンテンツ -->
     <main class="content">
 
         <!-- メインビジュアルスライダー -->
-        <section id="main-slider" class="splide" aria-label="ゆれあメインビジュアル">
+        <section
+            id="main-slider"
+            class="splide"
+            aria-label="ゆれあ メインビジュアル"
+        >
 
             <div class="splide__track">
 
@@ -51,17 +66,26 @@
 
                     <!-- スライド1 -->
                     <li class="splide__slide">
-                        <img src="images/main01.jpg" alt="ゆれあ メインビジュアル1">
+                        <img
+                            data-splide-lazy="https://shopping.c.yimg.jp/lib/fi-mint/a1-grc120dskna.jpg"
+                            alt="ゆれあ メインビジュアル1"
+                        >
                     </li>
 
                     <!-- スライド2 -->
                     <li class="splide__slide">
-                        <img src="images/main02.jpg" alt="ゆれあ メインビジュアル2">
+                        <img
+                            data-splide-lazy="https://www.air-r.jp/item/images/10/s0t-kago1-desk.jpg"
+                            alt="ゆれあ メインビジュアル2"
+                        >
                     </li>
 
                     <!-- スライド3 -->
                     <li class="splide__slide">
-                        <img src="images/main03.jpg" alt="ゆれあ メインビジュアル3">
+                        <img
+                            data-splide-lazy="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkB6S4ZpOxtGNlSoYuoxIoNwNR7jHBcWyeqQdHOW_jIW0FJr4z-nxOCFPE&s=10"
+                            alt="ゆれあ メインビジュアル3"
+                        >
                     </li>
 
                 </ul>
@@ -70,53 +94,25 @@
 
         </section>
 
-
         <!-- 通常コンテンツ -->
-        <section class="main-content">
+        <section class="main-content" id="works">
 
-            <h1>メインコンテンツ</h1>
+            <h1>準備中です。</h1>
 
-            <p>
-                画面を下にスクロールしても、
-                上のバーは常に一番上に固定されて表示されます。
-            </p>
+            <p>独自エンジン開発中</p>
+
+        </section>
+
+        <!-- お問い合わせ -->
+        <section class="contact-content" id="contact">
+
+            <h2>お問い合わせ</h2>
+
+            <p>お問い合わせページは準備中です。</p>
 
         </section>
 
     </main>
-
-
-    <!-- Splide JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
-
-    <!-- スライダーの初期化 -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-
-            new Splide("#main-slider", {
-                type: "loop",
-                autoplay: true,
-                interval: 5000,
-                speed: 1000,
-
-                pauseOnHover: true,
-                pauseOnFocus: true,
-
-                arrows: true,
-                pagination: true,
-
-                perPage: 1,
-                perMove: 1,
-
-                drag: true,
-
-                rewind: false,
-
-                lazyLoad: "nearby"
-            }).mount();
-
-        });
-    </script>
 
 </body>
 </html>
